@@ -13,13 +13,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 @EnableCaching//开启缓存
 @MapperScan("org.zdd.bookstore.model.dao")
 @EnableAsync
-public class BookstoreApplication extends SpringBootServletInitializer{
-
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(BookstoreApplication.class);
-    }
-
+public class BookstoreApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(BookstoreApplication.class, args);
