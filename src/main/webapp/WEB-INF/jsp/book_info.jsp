@@ -50,6 +50,9 @@
 
         function addCart(bookId) {
             location.href = "<%=basePath%>" + "cart/addition?bookId=" + bookId + "&buyNum=" + $("#buy_num").val();
+            $.get("<%=basePath%>" + "cart/addHDFS?bookId=" + bookId ,function (data){
+
+            })
         }
     </script>
 </head>

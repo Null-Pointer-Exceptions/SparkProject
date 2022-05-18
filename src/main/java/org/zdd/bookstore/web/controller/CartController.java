@@ -1,8 +1,14 @@
 package org.zdd.bookstore.web.controller;
 
+import com.alibaba.fastjson.JSON;
 import org.zdd.bookstore.common.pojo.BSResult;
+import org.zdd.bookstore.common.utils.TimeUtils;
+import org.zdd.bookstore.exception.BSException;
+import org.zdd.bookstore.model.entity.User;
 import org.zdd.bookstore.model.entity.custom.Cart;
 import org.zdd.bookstore.model.entity.BookInfo;
+import org.zdd.bookstore.model.entity.log.ShoppingLogs;
+import org.zdd.bookstore.model.service.HDFSService;
 import org.zdd.bookstore.model.service.IBookInfoService;
 import org.zdd.bookstore.model.service.ICartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/cart")
@@ -27,6 +34,8 @@ public class CartController {
         return "cart";
     }
 
+    @Autowired
+    HDFSService hdfsService;
     /**
      * 加入购物车
      *
@@ -53,6 +62,18 @@ public class CartController {
             request.setAttribute("bookInfo", null);
         }
         return "addcart";
+    }
+
+    @RequestMapping("/addHDFS")
+    public void addToHDFS(int bookId, HttpSession session) throws BSException {
+
+        BookInfo bookInfo = bookInfoService.findById(bookId);
+
+        User user = (User) session.getAttribute("loginUser");
+
+        ShoppingLogs shoppingLogs = new ShoppingLogs(user.getUserId().toString(), user.getUsername(), user.getEmail(), user.getPhone(), user.getLocation(), user.getDetailAddress(), bookInfo.getBookId().toString(), bookInfo.getName(), bookInfo.getPress(), bookInfo.getPrice().toString(), bookInfo.getMarketPrice().toString(), bookInfo.getDealMount().toString(), bookInfo.getLookMount().toString(), TimeUtils.getTimes());
+        String line = JSON.toJSONString(shoppingLogs);
+        hdfsService.logToHDFS(line);
     }
 
     @GetMapping("/clear")
