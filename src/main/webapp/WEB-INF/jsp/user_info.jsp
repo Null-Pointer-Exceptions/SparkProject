@@ -205,11 +205,38 @@
             <label for="location" class="col-sm-2 control-label">居住地:</label>
             <select class="form-control" name="location" id="location" style="width: 150px;">
                 <option value="">请选择</option>
-                <option value="广州" ${sessionScope.loginUser.location == "广州"? "selected":""} >广州</option>
-                <option value="北京" ${sessionScope.loginUser.location == "北京"? "selected":""}>北京</option>
-                <option value="上海" ${sessionScope.loginUser.location == "上海"? "selected":""}>上海</option>
-                <option value="深圳" ${sessionScope.loginUser.location == "深圳"? "selected":""}>深圳</option>
-                <option value="茂名" ${sessionScope.loginUser.location == "茂名"? "selected":""}>茂名</option>
+                <option value="北京市" ${sessionScope.loginUser.location == "北京市"? "selected":""}>北京市</option>
+                <option value="天津市" ${sessionScope.loginUser.location == "天津市"? "selected":""}>天津市</option>
+                <option value="河北省" ${sessionScope.loginUser.location == "河北省"? "selected":""}>河北省</option>
+                <option value="山西省" ${sessionScope.loginUser.location == "山西省"? "selected":""}>山西省</option>
+                <option value="内蒙古" ${sessionScope.loginUser.location == "内蒙古"? "selected":""}>内蒙古</option>
+                <option value="辽宁省" ${sessionScope.loginUser.location == "辽宁省"? "selected":""}>辽宁省</option>
+                <option value="吉林省" ${sessionScope.loginUser.location == "吉林省"? "selected":""}>吉林省</option>
+                <option value="黑龙江" ${sessionScope.loginUser.location == "黑龙江"? "selected":""}>黑龙江</option>
+                <option value="上海市" ${sessionScope.loginUser.location == "上海市"? "selected":""}>上海市</option>
+                <option value="江苏省" ${sessionScope.loginUser.location == "江苏省"? "selected":""}>江苏省</option>
+
+                <option value="浙江省" ${sessionScope.loginUser.location == "浙江省"? "selected":""}>浙江省</option>
+                <option value="安徽省" ${sessionScope.loginUser.location == "安徽省"? "selected":""}>安徽省</option>
+                <option value="福建省" ${sessionScope.loginUser.location == "福建省"? "selected":""}>福建省</option>
+                <option value="江西省" ${sessionScope.loginUser.location == "江西省"? "selected":""}>江西省</option>
+                <option value="山东省" ${sessionScope.loginUser.location == "山东省"? "selected":""}>山东省</option>
+                <option value="河南省" ${sessionScope.loginUser.location == "河南省"? "selected":""}>河南省</option>
+                <option value="湖北省" ${sessionScope.loginUser.location == "湖北省"? "selected":""}>湖北省</option>
+                <option value="湖南省" ${sessionScope.loginUser.location == "湖南省"? "selected":""}>湖南省</option>
+                <option value="广东省" ${sessionScope.loginUser.location == "广东省"? "selected":""}>广东省</option>
+                <option value="海南省" ${sessionScope.loginUser.location == "海南省"? "selected":""}>海南省</option>
+
+                <option value="重庆市" ${sessionScope.loginUser.location == "重庆市"? "selected":""}>重庆市</option>
+                <option value="四川省" ${sessionScope.loginUser.location == "四川省"? "selected":""}>四川省</option>
+                <option value="贵州省" ${sessionScope.loginUser.location == "贵州省"? "selected":""}>贵州省</option>
+                <option value="云南省" ${sessionScope.loginUser.location == "云南省"? "selected":""}>云南省</option>
+                <option value="陕西省" ${sessionScope.loginUser.location == "陕西省"? "selected":""}>陕西省</option>
+                <option value="甘肃省" ${sessionScope.loginUser.location == "甘肃省"? "selected":""}>甘肃省</option>
+                <option value="青海省" ${sessionScope.loginUser.location == "青海省"? "selected":""}>青海省</option>
+                <option value="宁夏" ${sessionScope.loginUser.location == "宁夏"? "selected":""}>宁夏</option>
+                <option value="新疆" ${sessionScope.loginUser.location == "新疆"? "selected":""}>新疆</option>
+                <option value="西藏" ${sessionScope.loginUser.location == "西藏"? "selected":""}>西藏</option>
             </select>
         </div>
 
