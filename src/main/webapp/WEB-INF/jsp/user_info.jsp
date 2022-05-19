@@ -244,11 +244,11 @@
             <label class="col-sm-2 control-label">性别:</label>
             <label class="radio-inline">
                 <input type="radio" name="gender" id="man"
-                       value="1" ${sessionScope.loginUser.gender == "1"? "checked":""} > 男
+                       value="男" ${sessionScope.loginUser.gender == "男"? "checked":""} > 男
             </label>
             <label class="radio-inline">
                 <input type="radio" name="gender" id="woman"
-                       value="0" ${sessionScope.loginUser.gender == "0"? "checked":""} > 女
+                       value="女" ${sessionScope.loginUser.gender == "女"? "checked":""} > 女
             </label>
         </div>
 

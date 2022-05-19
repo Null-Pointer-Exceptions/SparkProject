@@ -71,7 +71,7 @@ public class CartController {
 
         User user = (User) session.getAttribute("loginUser");
 
-        ShoppingLogs shoppingLogs = new ShoppingLogs(user.getUserId().toString(), user.getUsername(), user.getEmail(), user.getPhone(), user.getLocation(), user.getDetailAddress(), bookInfo.getBookId().toString(), bookInfo.getName(), bookInfo.getPress(), bookInfo.getPrice().toString(), bookInfo.getMarketPrice().toString(), bookInfo.getDealMount().toString(), bookInfo.getLookMount().toString(), TimeUtils.getTimes());
+        ShoppingLogs shoppingLogs = new ShoppingLogs(user.getUserId().toString(), user.getUsername(), user.getEmail(), user.getPhone(), user.getLocation(), user.getDetailAddress(), bookInfo.getBookId().toString(), bookInfo.getName(), bookInfo.getPress(), bookInfo.getPrice().toString(), bookInfo.getMarketPrice().toString(), bookInfo.getDealMount().toString(), bookInfo.getLookMount().toString(), TimeUtils.getTimes(), user.getGender(), user.getIdentity());
         String line = JSON.toJSONString(shoppingLogs);
         hdfsService.logToHDFS(line);
     }

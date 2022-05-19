@@ -15,11 +15,11 @@ public class ShoppingLogs {
     private String deal_mount;
     private String look_mount;
     private String times;
+    private String gender;
+    private String identity;
 
-    public ShoppingLogs() {
 
-    }
-    public ShoppingLogs(String user_id, String username, String email, String phone, String location, String detail_address, String book_id, String book_name, String book_press, String book_price, String book_market_price, String deal_mount, String look_mount, String times) {
+    public ShoppingLogs(String user_id, String username, String email, String phone, String location, String detail_address, String book_id, String book_name, String book_press, String book_price, String book_market_price, String deal_mount, String look_mount, String times, String gender, String identity) {
         this.user_id = user_id;
         this.username = username;
         this.email = email;
@@ -34,6 +34,8 @@ public class ShoppingLogs {
         this.deal_mount = deal_mount;
         this.look_mount = look_mount;
         this.times = times;
+        this.gender = gender;
+        this.identity = identity;
     }
 
     public void setUser_id(String user_id) {
@@ -64,7 +66,6 @@ public class ShoppingLogs {
         this.book_id = book_id;
     }
 
-
     public void setBook_name(String book_name) {
         this.book_name = book_name;
     }
@@ -91,6 +92,14 @@ public class ShoppingLogs {
 
     public void setTimes(String times) {
         this.times = times;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setIdentity(String identity) {
+        this.identity = identity;
     }
 
     public String getUser_id() {
@@ -121,7 +130,6 @@ public class ShoppingLogs {
         return book_id;
     }
 
-
     public String getBook_name() {
         return book_name;
     }
@@ -150,23 +158,11 @@ public class ShoppingLogs {
         return times;
     }
 
-    @Override
-    public String toString() {
-        return "ShoppingLogs{" +
-                "user_id='" + user_id + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", location='" + location + '\'' +
-                ", detail_address='" + detail_address + '\'' +
-                ", book_id='" + book_id + '\'' +
-                ", book_name='" + book_name + '\'' +
-                ", book_press='" + book_press + '\'' +
-                ", book_price='" + book_price + '\'' +
-                ", book_market_price='" + book_market_price + '\'' +
-                ", deal_mount='" + deal_mount + '\'' +
-                ", look_mount='" + look_mount + '\'' +
-                ", times='" + times + '\'' +
-                '}';
+    public String getGender() {
+        return gender;
+    }
+
+    public String getIdentity() {
+        return identity;
     }
 }
